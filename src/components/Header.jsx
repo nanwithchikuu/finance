@@ -1,8 +1,11 @@
 import { CgProfile } from "react-icons/cg";
 import { FiPlus } from "react-icons/fi";
-import { PiSignOutBold } from "react-icons/pi";
+import { PiSignOutBold } from "react-icons/pi"
+import { useNavigate } from "react-router-dom";
 
-const ExpenseHeader = ({ formTransaction }) => {
+const ExpenseHeader = () => {
+
+  const navigate = useNavigate();
   return (
     <>
       <div className="container">
@@ -30,7 +33,7 @@ const ExpenseHeader = ({ formTransaction }) => {
                 <button
                   type="button"
                   className="btn btn-primary transection"
-                  onClick={(event) => formTransaction(event)}
+                  onClick={() =>navigate("/transaction")}
                 >
                   <FiPlus /> Add Transaction
                 </button>
